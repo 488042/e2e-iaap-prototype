@@ -1,0 +1,51 @@
+//
+// For guidance on how to add CSS and SCSS see:
+// https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images
+// 
+
+// Add extra styles here
+
+/* Override to force pages using the unbranded template to fill the page height */
+.unbranded-fill-page {
+  height: 100%;
+}
+
+/* General prototype pages (not part of the service) */
+
+/* Extra spacing (for smaller devices) above the 'Private beta (MVP)' section on the index page */
+.index-padding {
+  padding-bottom: 15px;
+}
+@media (min-width: 40.0625em) {
+  .index-padding {
+    padding-bottom: initial;
+  }
+}
+
+/* Styling to distinguish any external service links from our service (e.g. GOV.UK One Login) */
+.externalService {
+  background: #f3f2f1;
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  margin-top: 30px;
+  margin-right: -20px;
+  margin-bottom: 30px;
+  margin-left: -20px;
+}
+
+/* Reduce whitespace beneath select section headings for better readability (i.e. sub-headings) */
+.heading-override {
+  margin-bottom: 5px;
+}
+
+/* Reduce whitespace beneath nested lists within lists for better readability */
+.list-override {
+  margin-bottom: 0;
+}
+@media (min-width: 48.0625em) {
+  .list-override{
+    margin-bottom: 5px;
+  }
+}

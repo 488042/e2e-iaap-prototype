@@ -1,0 +1,9 @@
+{
+  "serviceName": "Government assurance services",
+  "useServiceNavigation": true,
+  "plugins": {
+    "govuk-frontend": {
+      "rebrand": true
+    }
+  }
+}
