@@ -49,3 +49,106 @@
     margin-bottom: 5px;
   }
 }
+
+/* Styling of a third party (OPEN SOURCE) accessible tooltip and modal which was taken from Nicolas Hoffmann (https://a11y.nicolas-hoffmann.net/modal/) */
+.js-modal:link, .js-modal:visited, .js-modal:hover, .js-modal:active, .js-modal:focus {
+  color: #0b0c0c;
+}
+
+.js-modal-bolder:link, .js-modal-bolder:visited, .js-modal-bolder:hover, .js-modal-bolder:active, .js-modal-bolder:focus {  
+  font-weight: bolder !important; // Expansion to make chosen links more distinguishable against the yellow GOV.UK tag component
+}
+
+dialog {
+  display: block;
+}
+
+.no-scroll-html {
+  overflow: hidden;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: #000;
+  opacity: .8;
+  z-index: 666;
+  cursor: pointer;
+}
+
+.modal {
+  font-family: "GDS Transport", arial, sans-serif;
+  font-weight: 400;
+  text-transform: none;
+  font-size: 16px;
+  line-height: 1.25;
+  -webkit-font-smoothing: antialiased;
+  position: fixed;
+  left: 0;
+  top: 25%;
+  width: 50%;
+  right: 0;
+  margin: 0 auto;
+  border: 1px solid #000;; 
+  background: #fff;
+  z-index: 667;
+  padding: 2em;
+  overflow: auto;
+}
+@media (min-width: 641px) {
+  .modal {
+    font-size: 19px;
+    line-height: 1.31579;
+  }
+}
+
+.modal-close {
+  -webkit-font-smoothing: antialiased;
+  background: none !important;
+  border: none;
+  padding: 0 !important;
+  color: #1d70b8;
+  cursor: pointer;
+}
+.modal-close:link {
+  color: #1d70b8;
+}
+.modal-close:visited {
+  color: #4c2c92;
+}
+.modal-close:hover {
+  color: #003078;
+}
+.modal-close:active {
+  color: #003078;
+}
+.modal-close:focus {
+  outline: 3px solid transparent;
+  color: #0b0c0c;
+  background-color: #ffdd00;
+  box-shadow: 0 -2px #ffdd00, 0 4px #0b0c0c;
+  text-decoration: none;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  background: #ffdd00 !important;
+}
+
+#modal-title {
+  margin-top: 15px;
+}
+@media (min-width: 641px) {
+  #modal-title {
+    margin-top: 20px;
+  }
+}
+
+.modal__content p {
+  margin-bottom: 0;
+}
