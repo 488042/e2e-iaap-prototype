@@ -1,0 +1,65 @@
+{% extends "v1/layouts/signed-in.html" %}
+
+{% block pageTitle %}
+  Will the initiative build, deploy or significantly rely on an algorithmic, machine based learning or AI system that informs decisions affecting the public? – Service name – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="data-and-privacy-cross-government" method="post" novalidate>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <span class="govuk-caption-l">1. Programme or project details</span>
+            <h1 class="govuk-fieldset__heading">
+              Will the initiative build, deploy or significantly rely on an algorithmic, machine based learning or AI system that informs decisions affecting the public?
+            </h1>
+          </legend>
+          
+          <div class="govuk-radios" data-module="govuk-radios">
+            
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="dataAndPrivacyAi" name="dataAndPrivacyAi" type="radio" value="Yes">
+              <label class="govuk-label govuk-radios__label" for="dataAndPrivacyAi">
+                Yes
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="dataAndPrivacyAi-2" name="dataAndPrivacyAi" type="radio" value="No">
+              <label class="govuk-label govuk-radios__label" for="dataAndPrivacyAi-2">
+                No
+              </label>
+            </div>
+            
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="dataAndPrivacyAi-3" name="dataAndPrivacyAi" type="radio" value="Not sure yet" data-aria-controls="conditional-contact">
+              <label class="govuk-label govuk-radios__label" for="dataAndPrivacyAi-3">
+                Not sure yet
+              </label>
+            </div>
+
+          </div>
+
+        </fieldset>
+      </div>
+
+      <div class="govuk-button-group">
+        <button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>
+        <a href="#" class="govuk-link">Save and continue later</a>
+      </div>
+
+    </form>
+
+  </div>
+
+</div>
+{% endblock %}

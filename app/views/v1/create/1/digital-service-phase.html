@@ -1,0 +1,86 @@
+{% extends "v1/layouts/signed-in.html" %}
+
+{% block pageTitle %}
+  Which phase of the digital service lifecycle is the initiative currently in? – Service name – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="digital-service-cddo" method="post" novalidate>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <span class="govuk-caption-l">1. Programme or project details</span>
+            <h1 class="govuk-fieldset__heading">
+              Which phase of the digital service lifecycle is the initiative currently in?
+            </h1>
+          </legend>
+          
+          <div class="govuk-radios" data-module="govuk-radios">
+            
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="phase" name="phase" type="radio" value="Pre discovery">
+              <label class="govuk-label govuk-radios__label" for="phase">
+                Pre discovery
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="phase-2" name="phase" type="radio" value="Discovery">
+              <label class="govuk-label govuk-radios__label" for="phase-2">
+                Discovery
+              </label>
+            </div>
+            
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="phase-3" name="phase" type="radio" value="Alpha" data-aria-controls="conditional-contact">
+              <label class="govuk-label govuk-radios__label" for="phase-3">
+                Alpha
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="phase-4" name="phase" type="radio" value="Private beta" data-aria-controls="conditional-contact">
+              <label class="govuk-label govuk-radios__label" for="phase-4">
+                Private beta
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="phase-5" name="phase" type="radio" value="Public beta" data-aria-controls="conditional-contact">
+              <label class="govuk-label govuk-radios__label" for="phase-5">
+                Public beta
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="phase-6" name="phase" type="radio" value="Live" data-aria-controls="conditional-contact">
+              <label class="govuk-label govuk-radios__label" for="phase-6">
+                Live
+              </label>
+            </div>
+
+          </div>
+
+        </fieldset>
+      </div>
+
+      <div class="govuk-button-group">
+        <button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>
+        <a href="#" class="govuk-link">Save and continue later</a>
+      </div>
+
+    </form>
+
+  </div>
+
+</div>
+{% endblock %}

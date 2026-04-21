@@ -1,0 +1,69 @@
+{% extends "v1/layouts/signed-in.html" %}
+
+{% block pageTitle %}
+  Programme or project – Service name – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="name-and-programme-or-project-validation" method="post" novalidate>
+      <span class="govuk-caption-l">1. Programme or project details</span>
+      <h1 class="govuk-heading-l">Programme or project</h1>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="initiativeName">
+          Name
+        </label>
+        <input class="govuk-input" id="initiativeName" name="initiativeName" type="text">
+      </div>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend">
+            Is this initiative a programme or project?
+          </legend>
+          
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="programmeOrProject" name="programmeOrProject" type="radio" value="Programme">
+              <label class="govuk-label govuk-radios__label" for="programmeOrProject">
+                Programme
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="programmeOrProject-2" name="programmeOrProject" type="radio" value="Project">
+              <label class="govuk-label govuk-radios__label" for="programmeOrProject-2">
+                Project
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="programmeOrProject-3" name="programmeOrProject" type="radio" value="Not sure yet">
+              <label class="govuk-label govuk-radios__label" for="programmeOrProject-3">
+                Not sure yet
+              </label>
+            </div>
+
+          </div>
+
+        </fieldset>
+      </div>
+
+      <div class="govuk-form-block">
+        <button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>
+      </div>
+
+    </form>
+
+  </div>
+
+</div>
+{% endblock %}

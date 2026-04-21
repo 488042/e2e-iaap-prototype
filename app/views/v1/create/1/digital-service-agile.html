@@ -1,0 +1,66 @@
+{% extends "v1/layouts/signed-in.html" %}
+
+{% block pageTitle %}
+  Is this initiative being delivered using agile ways of working? – Service name – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="digital-service-agile-validation" method="post" novalidate>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <span class="govuk-caption-l">1. Programme or project details</span>
+            <h1 class="govuk-fieldset__heading">
+              Is this initiative being delivered using agile ways of working?
+            </h1>
+          </legend>
+          <p class="govuk-hint">For example, iterative incremental release cycles.</p>
+          
+          <div class="govuk-radios" data-module="govuk-radios">
+            
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="agile" name="agile" type="radio" value="Fully agile">
+              <label class="govuk-label govuk-radios__label" for="agile">
+                Fully agile
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="agile-2" name="agile" type="radio" value="Blended agile">
+              <label class="govuk-label govuk-radios__label" for="agile-2">
+                Blended agile
+              </label>
+            </div>
+            
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="agile-3" name="agile" type="radio" value="Predictive or waterfall only" data-aria-controls="conditional-contact">
+              <label class="govuk-label govuk-radios__label" for="agile-3">
+                Predictive or waterfall only
+              </label>
+            </div>
+
+          </div>
+
+        </fieldset>
+      </div>
+
+      <div class="govuk-button-group">
+        <button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>
+        <a href="#" class="govuk-link">Save and continue later</a>
+      </div>
+
+    </form>
+
+  </div>
+
+</div>
+{% endblock %}

@@ -1,7 +1,7 @@
-{% extends "layouts/main.html" %}
+{% extends "v1/layouts/signed-in.html" %}
 
 {% block pageTitle %}
-  What is the change driver? – {{serviceName}} – GOV.UK Prototype Kit
+  What is the change driver? – Service name – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -18,6 +18,7 @@
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <span class="govuk-caption-l">1. Programme or project details</span>
             <h1 class="govuk-fieldset__heading">
               What is the change driver?
             </h1>

@@ -1,7 +1,7 @@
-{% extends "layouts/main.html" %}
+{% extends "v1/layouts/signed-in.html" %}
 
 {% block pageTitle %}
-  Objectives and expected benefits – {{serviceName}} – GOV.UK Prototype Kit
+  Objectives and expected benefits – Service name – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -16,6 +16,7 @@
     <form action="#" method="post" novalidate>
 
       <div class="govuk-form-group">
+        <span class="govuk-caption-l">1. Programme or project details</span>
         <h1 class="govuk-label-wrapper">
           <label class="govuk-label govuk-label--l" for="more-detail">
             Objectives and expected benefits

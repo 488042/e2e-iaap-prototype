@@ -1,0 +1,66 @@
+{% extends "v1/layouts/signed-in.html" %}
+
+{% block pageTitle %}
+  Will the initiative share data across organisational boundaries? – Service name – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="cyber-and-security" method="post" novalidate>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <span class="govuk-caption-l">1. Programme or project details</span>
+            <h1 class="govuk-fieldset__heading">
+              Will the initiative share data across organisational boundaries?
+            </h1>
+          </legend>
+          <p class="govuk-body">This includes data between government departments, arm's-length bodies or with the wider public sector.</p>
+          
+          <div class="govuk-radios" data-module="govuk-radios">
+            
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="dataAndPrivacyCrossGovernment" name="dataAndPrivacyCrossGovernment" type="radio" value="Yes">
+              <label class="govuk-label govuk-radios__label" for="dataAndPrivacyCrossGovernment">
+                Yes
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="dataAndPrivacyCrossGovernment-2" name="dataAndPrivacyCrossGovernment" type="radio" value="No">
+              <label class="govuk-label govuk-radios__label" for="dataAndPrivacyCrossGovernment-2">
+                No
+              </label>
+            </div>
+            
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="dataAndPrivacyCrossGovernment-3" name="dataAndPrivacyCrossGovernment" type="radio" value="Not sure yet" data-aria-controls="conditional-contact">
+              <label class="govuk-label govuk-radios__label" for="dataAndPrivacyCrossGovernment-3">
+                Not sure yet
+              </label>
+            </div>
+
+          </div>
+
+        </fieldset>
+      </div>
+
+      <div class="govuk-button-group">
+        <button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>
+        <a href="#" class="govuk-link">Save and continue later</a>
+      </div>
+
+    </form>
+
+  </div>
+
+</div>
+{% endblock %}

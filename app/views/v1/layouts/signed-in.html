@@ -1,0 +1,28 @@
+{#
+  For guidance on how to use layouts see:
+  https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
+#}
+
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+{% from "govuk/components/header/macro.njk" import govukHeader %}
+{% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+{% block header %}
+{{ govukHeader({
+  homepageUrl: "/"
+}) }}
+
+{{ govukServiceNavigation({
+  serviceName: "Service name",
+  serviceUrl: "/v1/home"
+}) }}
+
+<div class="govuk-width-container">
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Alpha"
+    },
+    html: 'This is a new service. Help us improve it and <a href="#" class="govuk-link">give your feedback by email</a>.'
+  }) }}
+</div>
+{% endblock %}

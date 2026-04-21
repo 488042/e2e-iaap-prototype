@@ -1,7 +1,7 @@
-{% extends "layouts/main.html" %}
+{% extends "v1/layouts/main.html" %}
 
 {% block pageTitle %}
-  Start page template – GOV.UK Prototype Kit
+  Service name – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block header %}
@@ -32,7 +32,7 @@
 <div class="govuk-grid-row">
 
   <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-xl">Start page template</h1>
+    <h1 class="govuk-heading-xl">Service name</h1>
     <p>Use this service to:</p>
     <ul class="govuk-list govuk-list--bullet">
       <li>do something</li>
@@ -42,7 +42,7 @@
     <p>Registering takes around 5 minutes.</p>
     {{govukButton({
       text: "Start now",
-      href: "create/name",
+      href: "home",
       isStartButton: true
     })}}
     <h2 class="govuk-heading-m">Before you start</h2>

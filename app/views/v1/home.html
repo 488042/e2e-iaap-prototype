@@ -1,0 +1,25 @@
+{% extends "v1/layouts/signed-in.html" %}
+
+{% block pageTitle %}
+  Service name – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="create/1/name-and-programme-or-project" method="post" novalidate>
+      <h1 class="govuk-heading-l">Your programmes and projects</h1>
+      <p class="govuk-body">You currently have no programmes or projects.</p>
+
+      <div class="govuk-form-block">
+        <button type="submit" class="govuk-button" data-module="govuk-button">Create a programme or project</button>
+      </div>
+
+    </form>
+
+  </div>
+
+</div>
+{% endblock %}

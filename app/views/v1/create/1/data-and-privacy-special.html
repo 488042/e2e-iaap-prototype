@@ -1,0 +1,94 @@
+{% extends "v1/layouts/signed-in.html" %}
+
+{% block pageTitle %}
+  Will the initiative process any special category personal data? – Service name – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="data-and-privacy-ai" method="post" novalidate>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <span class="govuk-caption-l">1. Programme or project details</span>
+            <h1 class="govuk-fieldset__heading">
+              Will the initiative process any special category personal data?
+            </h1>
+          </legend>
+          <p class="govuk-body">Special category personal data includes children's data at scale, large scale systematic monitoring, or data that could affect people's access to services, benefits and rights.</p>
+          
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+      
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="dataAndPrivacySpecial" name="dataAndPrivacySpecial" type="checkbox" value="Special category personal data" aria-describedby="dataAndPrivacySpecial-hint">
+              <label class="govuk-label govuk-checkboxes__label" for="dataAndPrivacySpecial">
+                Special category personal data
+              </label>
+
+              <div id="dataAndPrivacySpecial-hint" class="govuk-hint govuk-checkboxes__hint">
+                including health, ethnicity and biometrics
+              </div>
+
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="dataAndPrivacySpecial-2" name="dataAndPrivacySpecial" type="checkbox" value="Children's data at scale">
+              <label class="govuk-label govuk-checkboxes__label" for="dataAndPrivacySpecial-2">
+                Children's data at scale
+              </label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="dataAndPrivacySpecial-3" name="dataAndPrivacySpecial" type="checkbox" value="Large scale systematic monitoring of a public area or population">
+              <label class="govuk-label govuk-checkboxes__label" for="dataAndPrivacySpecial-3">
+                Large scale systematic monitoring of a public area or population
+              </label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="dataAndPrivacySpecial-4" name="dataAndPrivacySpecial" type="checkbox" value="Data used in decisions affecting access to services, benefits or rights">
+              <label class="govuk-label govuk-checkboxes__label" for="dataAndPrivacySpecial-4">
+                Data used in decisions affecting access to services, benefits or rights
+              </label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="dataAndPrivacySpecial-5" name="dataAndPrivacySpecial" type="checkbox" value="None of above">
+              <label class="govuk-label govuk-checkboxes__label" for="dataAndPrivacySpecial-5">
+                None of above
+              </label>
+            </div>
+
+            <div class="govuk-checkboxes__divider">or</div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="dataAndPrivacySpecial-6" name="dataAndPrivacySpecial" type="checkbox" value="Not sure yet">
+              <label class="govuk-label govuk-checkboxes__label" for="dataAndPrivacySpecial-6">
+                Not sure yet
+              </label>
+            </div>
+
+          </div>
+
+        </fieldset>
+      </div>
+
+      <div class="govuk-button-group">
+        <button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>
+        <a href="#" class="govuk-link">Save and continue later</a>
+      </div>
+
+    </form>
+
+  </div>
+
+</div>
+{% endblock %}

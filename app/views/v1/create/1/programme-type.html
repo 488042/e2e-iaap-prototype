@@ -1,0 +1,79 @@
+{% extends "v1/layouts/signed-in.html" %}
+
+{% block pageTitle %}
+  Which of these categories best describes the nature of the work? – Service name – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="programme-type-validation" method="post" novalidate>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <span class="govuk-caption-l">1. Programme or project details</span>
+            <h1 class="govuk-fieldset__heading">
+              Which of these categories best describes the nature of the work? 
+            </h1>
+          </legend>
+          
+          <div class="govuk-radios" data-module="govuk-radios">
+            
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="initiativeType" name="initiativeType" type="radio" value="Digital and data">
+              <label class="govuk-label govuk-radios__label" for="initiativeType">
+                Digital and data
+              </label>
+            </div>
+            
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="initiativeType-2" name="initiativeType" type="radio" value="Infrastructure and construction" data-aria-controls="conditional-contact">
+              <label class="govuk-label govuk-radios__label" for="initiativeType-2">
+                Infrastructure and construction
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="initiativeType-3" name="initiativeType" type="radio" value="International" data-aria-controls="conditional-contact">
+              <label class="govuk-label govuk-radios__label" for="initiativeType-3">
+                International
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="initiativeType-4" name="initiativeType" type="radio" value="Military capability" data-aria-controls="conditional-contact">
+              <label class="govuk-label govuk-radios__label" for="initiativeType-4">
+                Military capability
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="initiativeType-5" name="initiativeType" type="radio" value="Transformation and service delivery">
+              <label class="govuk-label govuk-radios__label" for="initiativeType-5">
+                Transformation and service delivery
+              </label>
+            </div>
+
+          </div>
+
+        </fieldset>
+      </div>
+
+      <div class="govuk-button-group">
+        <button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>
+        <a href="#" class="govuk-link">Save and continue later</a>
+      </div>
+
+    </form>
+
+  </div>
+
+</div>
+{% endblock %}
