@@ -49,4 +49,17 @@ module.exports = function(router) {
 
   })
 
+  router.post('/' + version + '/' + 'create/1/spend-digital-validation', function (req, res) {
+
+    var spendDigital = req.body['spendDigital']
+    
+    if (spendDigital == "Yes") {
+      res.redirect('/' + version + '/' + 'create/1/spend-classification')
+    }
+    else {
+      res.redirect('/' + version + '/' + 'create/1/spend-marketing')
+    }
+
+  })
+
 }

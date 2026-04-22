@@ -1,0 +1,88 @@
+{% extends "v1/layouts/signed-in.html" %}
+
+{% block pageTitle %}
+  Does the initiative have a digital or technology element? – Service name – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="spend-digital-validation" method="post" novalidate>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <span class="govuk-caption-l">1. Programme or project details</span>
+            <h1 class="govuk-fieldset__heading">
+              Does the initiative have a digital or technology element?
+            </h1>
+          </legend>
+          
+          <div class="govuk-radios" data-module="govuk-radios">
+            
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="spendDigital" name="spendDigital" type="radio" value="Yes" data-aria-controls="spendDigital-conditional">
+              <label class="govuk-label govuk-radios__label" for="spendDigital">
+                Yes
+              </label>
+            </div>
+
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="spendDigital-conditional">
+              
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                  <legend class="govuk-fieldset__legend">
+                    Does that element total £20 million or more over its lifetime?
+                  </legend>
+                  
+                  <div class="govuk-radios" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="spendDigitalOver20M" name="spendDigitalOver20M" type="radio" value="Yes">
+                      <label class="govuk-label govuk-radios__label" for="spendDigitalOver20M">
+                        Yes
+                      </label>
+                    </div>
+
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="spendDigitalOver20M-2" name="spendDigitalOver20M" type="radio" value="No">
+                      <label class="govuk-label govuk-radios__label" for="spendDigitalOver20M-2">
+                        No
+                      </label>
+                    </div>
+                    
+                  </div>
+
+                </fieldset>
+              </div>
+
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="spendDigital-2" name="spendDigital" type="radio" value="No">
+              <label class="govuk-label govuk-radios__label" for="spendDigital-2">
+                No
+              </label>
+            </div>
+
+          </div>
+
+        </fieldset>
+      </div>
+
+      <div class="govuk-button-group">
+        <button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>
+        <a href="#" class="govuk-link">Save and continue later</a>
+      </div>
+
+    </form>
+
+  </div>
+
+</div>
+{% endblock %}

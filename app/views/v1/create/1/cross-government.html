@@ -1,7 +1,7 @@
 {% extends "v1/layouts/signed-in.html" %}
 
 {% block pageTitle %}
-  Are you expecting to use a Gate 0 Strategic Assessment review to support each business case approval point? – Service name – GOV.UK Prototype Kit
+  Does the initiative depend on, or materially affect, work being led by other government departments or arm's length bodies? – Service name – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -13,36 +13,48 @@
     
   <div class="govuk-grid-column-two-thirds">
 
-    <form action="programme-type" method="post" novalidate>
+    <form action="spend" method="post" novalidate>
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <span class="govuk-caption-l">1. Programme or project details</span>
             <h1 class="govuk-fieldset__heading">
-              Are you expecting to use a Gate 0 Strategic Assessment review to support each business case approval point?
+              Does the initiative depend on, or materially affect, work being led by other government departments or arm's length bodies?
             </h1>
           </legend>
           
           <div class="govuk-radios" data-module="govuk-radios">
             
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="gate0" name="gate0" type="radio" value="Yes">
-              <label class="govuk-label govuk-radios__label" for="gate0">
-                Yes
+              <input class="govuk-radios__input" id="crossGovernment" name="crossGovernment" type="radio" value="No">
+              <label class="govuk-label govuk-radios__label" for="crossGovernment">
+                No
               </label>
             </div>
 
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="gate0-2" name="gate0" type="radio" value="No">
-              <label class="govuk-label govuk-radios__label" for="gate0-2">
-                No
+              <input class="govuk-radios__input" id="crossGovernment-2" name="crossGovernment" type="radio" value="Some dependencies" aria-describedby="crossGovernment-hint">
+              <label class="govuk-label govuk-radios__label" for="crossGovernment-2">
+                Some dependencies
+              </label>
+
+              <div id="crossGovernment-hint" class="govuk-hint govuk-checkboxes__hint">
+                one or two other departments or arm's length bodies
+              </div>
+
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="crossGovernment-3" name="crossGovernment" type="radio" value="Significant dependencies">
+              <label class="govuk-label govuk-radios__label" for="crossGovernment-3">
+                Significant dependencies
               </label>
             </div>
             
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="gate0-6" name="gate0" type="radio" value="Not sure yet" data-aria-controls="conditional-contact">
-              <label class="govuk-label govuk-radios__label" for="gate0-6">
+              <input class="govuk-radios__input" id="crossGovernment-4" name="crossGovernment" type="radio" value="Not sure yet" data-aria-controls="conditional-contact">
+              <label class="govuk-label govuk-radios__label" for="crossGovernment-4">
                 Not sure yet
               </label>
             </div>

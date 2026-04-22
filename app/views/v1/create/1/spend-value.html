@@ -1,7 +1,7 @@
 {% extends "v1/layouts/signed-in.html" %}
 
 {% block pageTitle %}
-  What is the estimated total construction value of the works element? – Service name – GOV.UK Prototype Kit
+  What is the estimated total value of the largest single in scope commercial activity in the project? – Service name – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -13,22 +13,23 @@
     
   <div class="govuk-grid-column-two-thirds">
 
-    <form action="property" method="post" novalidate>
+    <form action="spend-digital" method="post" novalidate>
 
       <div class="govuk-form-group">
         <span class="govuk-caption-l">1. Programme or project details</span>
         <h1 class="govuk-label-wrapper">
-          <label class="govuk-label govuk-label--l" for="constructionValue">
-            What is the estimated total construction value of the works element?
+          <label class="govuk-label govuk-label--l" for="spendValue">
+            What is the estimated total value of the largest single in scope commercial activity in the project?
           </label>
         </h1>
+        <p class="govuk-body">This includes any new or replacement contract, contract change, contract extension, framework, DPS ceiling or contract with a grant element.</p>
         <p class="govuk-body">Do not include VAT in this amount.</p>
 
         <div class="govuk-input__wrapper">
           
           <div class="govuk-input__prefix" aria-hidden="true">£</div>
 
-          <input class="govuk-input govuk-input--width-10" id="constructionValue" name="constructionValue" type="text" spellcheck="false">
+          <input class="govuk-input govuk-input--width-10" id="spendValue" name="spendValue" type="text" spellcheck="false">
         </div>
 
       </div>

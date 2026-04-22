@@ -1,7 +1,7 @@
 {% extends "v1/layouts/signed-in.html" %}
 
 {% block pageTitle %}
-  Are you expecting to use a Gate 0 Strategic Assessment review to support each business case approval point? – Service name – GOV.UK Prototype Kit
+  Will the solution be hosted on, or make significant use of, cloud services? – Service name – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -13,36 +13,60 @@
     
   <div class="govuk-grid-column-two-thirds">
 
-    <form action="programme-type" method="post" novalidate>
+    <form action="cyber-and-security-suppliers" method="post" novalidate>
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <span class="govuk-caption-l">1. Programme or project details</span>
             <h1 class="govuk-fieldset__heading">
-              Are you expecting to use a Gate 0 Strategic Assessment review to support each business case approval point?
+              Will the solution be hosted on, or make significant use of, cloud services?
             </h1>
           </legend>
+          <p class="govuk-body">This includes Infrastructure as a Service (IaaS), Platform as a Service (PaaS) and Software as a Service (SaaS).</p>
           
-          <div class="govuk-radios" data-module="govuk-radios">
-            
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="gate0" name="gate0" type="radio" value="Yes">
-              <label class="govuk-label govuk-radios__label" for="gate0">
-                Yes
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+      
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="cyberAndSecurityCloud" name="cyberAndSecurityCloud" type="checkbox" value="IaaS">
+              <label class="govuk-label govuk-checkboxes__label" for="cyberAndSecurityCloud">
+                <abbr title="Infrastructure as a Service">IaaS</abbr>
               </label>
             </div>
 
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="gate0-2" name="gate0" type="radio" value="No">
-              <label class="govuk-label govuk-radios__label" for="gate0-2">
-                No
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="cyberAndSecurityCloud-2" name="cyberAndSecurityCloud" type="checkbox" value="PaaS">
+              <label class="govuk-label govuk-checkboxes__label" for="cyberAndSecurityCloud-2">
+                <abbr title="Platform as a Service">PaaS</abbr>
               </label>
             </div>
-            
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="gate0-6" name="gate0" type="radio" value="Not sure yet" data-aria-controls="conditional-contact">
-              <label class="govuk-label govuk-radios__label" for="gate0-6">
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="cyberAndSecurityCloud-3" name="cyberAndSecurityCloud" type="checkbox" value="SaaS">
+              <label class="govuk-label govuk-checkboxes__label" for="cyberAndSecurityCloud-3">
+                <abbr title="Software as a Service">SaaS</abbr>
+              </label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="cyberAndSecurityCloud-4" name="cyberAndSecurityCloud" type="checkbox" value="On premises only">
+              <label class="govuk-label govuk-checkboxes__label" for="cyberAndSecurityCloud-4">
+                On premises only
+              </label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="cyberAndSecurityCloud-5" name="cyberAndSecurityCloud" type="checkbox" value="Hybrid">
+              <label class="govuk-label govuk-checkboxes__label" for="cyberAndSecurityCloud-5">
+                Hybrid
+              </label>
+            </div>
+
+            <div class="govuk-checkboxes__divider">or</div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="cyberAndSecurityCloud-6" name="cyberAndSecurityCloud" type="checkbox" value="Not sure yet">
+              <label class="govuk-label govuk-checkboxes__label" for="cyberAndSecurityCloud-6">
                 Not sure yet
               </label>
             </div>

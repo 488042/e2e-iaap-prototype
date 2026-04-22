@@ -1,0 +1,72 @@
+{% extends "v1/layouts/signed-in.html" %}
+
+{% block pageTitle %}
+  Which pipeline assessment classification do any digital or technology elements carry against the seven criteria? – Service name – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="spend-marketing" method="post" novalidate>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <span class="govuk-caption-l">1. Programme or project details</span>
+            <h1 class="govuk-fieldset__heading">
+              Which pipeline assessment classification do any digital or technology elements carry against the seven criteria?
+            </h1>
+          </legend>
+          
+          <div class="govuk-radios" data-module="govuk-radios">
+            
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="spendClassification" name="spendClassification" type="radio" value="Assured">
+              <label class="govuk-label govuk-radios__label" for="spendClassification">
+                Assured
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="spendClassification-2" name="spendClassification" type="radio" value="Control">
+              <label class="govuk-label govuk-radios__label" for="spendClassification-2">
+                Control
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="spendClassification-3" name="spendClassification" type="radio" value="Monitor">
+              <label class="govuk-label govuk-radios__label" for="spendClassification-3">
+                Monitor
+              </label>
+            </div>
+            
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="spendClassification-4" name="spendClassification" type="radio" value="Not yet assessed" data-aria-controls="conditional-contact">
+              <label class="govuk-label govuk-radios__label" for="spendClassification-4">
+                Not yet assessed
+              </label>
+            </div>
+
+          </div>
+
+        </fieldset>
+      </div>
+
+      <div class="govuk-button-group">
+        <button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>
+        <a href="#" class="govuk-link">Save and continue later</a>
+      </div>
+
+    </form>
+
+  </div>
+
+</div>
+{% endblock %}

@@ -1,7 +1,7 @@
 {% extends "v1/layouts/signed-in.html" %}
 
 {% block pageTitle %}
-  Are you expecting to use a Gate 0 Strategic Assessment review to support each business case approval point? – Service name – GOV.UK Prototype Kit
+  Does the initiative involve a government building, land, lease or other property asset? – Service name – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -13,36 +13,37 @@
     
   <div class="govuk-grid-column-two-thirds">
 
-    <form action="programme-type" method="post" novalidate>
+    <form action="cross-government" method="post" novalidate>
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <span class="govuk-caption-l">1. Programme or project details</span>
             <h1 class="govuk-fieldset__heading">
-              Are you expecting to use a Gate 0 Strategic Assessment review to support each business case approval point?
+              Does the initiative involve a government building, land, lease or other property asset?
             </h1>
           </legend>
+          <p class="govuk-body">This includes acquisition, disposal, change of use, major refurbishment or new build on the government estate.</p>
           
           <div class="govuk-radios" data-module="govuk-radios">
             
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="gate0" name="gate0" type="radio" value="Yes">
-              <label class="govuk-label govuk-radios__label" for="gate0">
+              <input class="govuk-radios__input" id="property" name="property" type="radio" value="Yes">
+              <label class="govuk-label govuk-radios__label" for="property">
                 Yes
               </label>
             </div>
 
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="gate0-2" name="gate0" type="radio" value="No">
-              <label class="govuk-label govuk-radios__label" for="gate0-2">
+              <input class="govuk-radios__input" id="property-2" name="property" type="radio" value="No">
+              <label class="govuk-label govuk-radios__label" for="property-2">
                 No
               </label>
             </div>
             
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="gate0-6" name="gate0" type="radio" value="Not sure yet" data-aria-controls="conditional-contact">
-              <label class="govuk-label govuk-radios__label" for="gate0-6">
+              <input class="govuk-radios__input" id="property-3" name="property" type="radio" value="Not sure yet" data-aria-controls="conditional-contact">
+              <label class="govuk-label govuk-radios__label" for="property-3">
                 Not sure yet
               </label>
             </div>
