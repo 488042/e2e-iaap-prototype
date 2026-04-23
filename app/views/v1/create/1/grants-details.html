@@ -1,0 +1,133 @@
+{% extends "v1/layouts/signed-in.html" %}
+
+{% block pageTitle %}
+  Tell us the details about this grant? – Get assurance and approval for funding – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="people" method="post" novalidate>
+      <span class="govuk-caption-l">1. Programme or project details</span>
+      <h1 class="govuk-heading-l">Tell us the details about this grant</h1>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend">
+            Grant type
+          </legend>
+          
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+      
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="grantsDetails1" name="grantsDetails1" type="checkbox" value="General grants" aria-describedby="grantsDetails1-hint">
+              <label class="govuk-label govuk-checkboxes__label" for="grantsDetails1">
+                General grants
+              </label>
+
+              <div id="grantsDetails1-hint" class="govuk-hint govuk-checkboxes__hint">
+                including competed, uncompeted or criteria based
+              </div>
+
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="grantsDetails1-2" name="grantsDetails1" type="checkbox" value="Grant in aid">
+              <label class="govuk-label govuk-checkboxes__label" for="grantsDetails1-2">
+                Grant in aid
+              </label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="grantsDetails1-3" name="grantsDetails1" type="checkbox" value="Formular grants">
+              <label class="govuk-label govuk-checkboxes__label" for="grantsDetails1-3">
+                Formular grants
+              </label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="grantsDetails1-4" name="grantsDetails1" type="checkbox" value="None of above">
+              <label class="govuk-label govuk-checkboxes__label" for="grantsDetails1-4">
+                None of above
+              </label>
+            </div>
+
+            <div class="govuk-checkboxes__divider">or</div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="grantsDetails1-5" name="grantsDetails1" type="checkbox" value="Not sure yet">
+              <label class="govuk-label govuk-checkboxes__label" for="grantsDetails1-5">
+                Not sure yet
+              </label>
+            </div>
+
+          </div>
+
+        </fieldset>
+      </div>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend">
+            Is the grant scheme referenced in a government manifesto commitment or is it high value, hish risk, novel contentious or repercussive?
+          </legend>
+          
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+      
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="grantsDetails2" name="grantsDetails2" type="checkbox" value="Manifesto referenced">
+              <label class="govuk-label govuk-checkboxes__label" for="grantsDetails2">
+                Manifesto referenced
+              </label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="grantsDetails2-2" name="grantsDetails2" type="checkbox" value="High value">
+              <label class="govuk-label govuk-checkboxes__label" for="grantsDetails2-2">
+                High value
+              </label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="grantsDetails2-3" name="grantsDetails2" type="checkbox" value="High risk">
+              <label class="govuk-label govuk-checkboxes__label" for="grantsDetails2-3">
+                High risk
+              </label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="grantsDetails2-4" name="grantsDetails2" type="checkbox" value="Novel contentious or repercussive">
+              <label class="govuk-label govuk-checkboxes__label" for="grantsDetails2-4">
+                Novel contentious or repercussive
+              </label>
+            </div>            
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="grantsDetails2-5" name="grantsDetails2" type="checkbox" value="None of above">
+              <label class="govuk-label govuk-checkboxes__label" for="grantsDetails2-5">
+                None of above
+              </label>
+            </div>
+
+          </div>
+
+        </fieldset>
+      </div>
+
+      <div class="govuk-button-group">
+        <button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>
+        <a href="#" class="govuk-link">Save and continue later</a>
+      </div>
+
+    </form>
+
+  </div>
+
+</div>
+{% endblock %}

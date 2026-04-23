@@ -1,0 +1,89 @@
+{% extends "v1/layouts/signed-in.html" %}
+
+{% block pageTitle %}
+  Does the initiative require new primary legislation, new secondary legislation or significant legal drafting? – Get assurance and approval for funding – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="legal-amend" method="post" novalidate>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <span class="govuk-caption-l">1. Programme or project details</span>
+            <h1 class="govuk-fieldset__heading">
+              Does the initiative require new primary legislation, new secondary legislation or significant legal drafting?
+            </h1>
+          </legend>
+          <p class="govuk-hint">For example, new contractual frameworks, powers or dispositive instruments.</p>
+          
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+      
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="legal" name="legal" type="checkbox" value="New primary legislation">
+              <label class="govuk-label govuk-checkboxes__label" for="legal">
+                New primary legislation
+              </label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="legal-2" name="legal" type="checkbox" value="New secondary legislation">
+              <label class="govuk-label govuk-checkboxes__label" for="legal-2">
+                New secondary legislation
+              </label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="legal-3" name="legal" type="checkbox" value="Amendments to existing legislation">
+              <label class="govuk-label govuk-checkboxes__label" for="legal-3">
+                Amendments to existing legislation
+              </label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="legal-4" name="legal" type="checkbox" value="Significant new contractual or dispositive instruments">
+              <label class="govuk-label govuk-checkboxes__label" for="legal-4">
+                Significant new contractual or dispositive instruments
+              </label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="legal-5" name="legal" type="checkbox" value="None of above">
+              <label class="govuk-label govuk-checkboxes__label" for="legal-5">
+                None of above
+              </label>
+            </div>
+
+            <div class="govuk-checkboxes__divider">or</div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="legal-6" name="legal" type="checkbox" value="Not sure yet">
+              <label class="govuk-label govuk-checkboxes__label" for="legal-6">
+                Not sure yet
+              </label>
+            </div>
+
+          </div>
+
+        </fieldset>
+      </div>
+
+      <div class="govuk-button-group">
+        <button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>
+        <a href="#" class="govuk-link">Save and continue later</a>
+      </div>
+
+    </form>
+
+  </div>
+
+</div>
+{% endblock %}

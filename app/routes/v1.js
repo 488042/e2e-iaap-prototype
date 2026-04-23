@@ -62,4 +62,17 @@ module.exports = function(router) {
 
   })
 
+  router.post('/' + version + '/' + 'create/1/grants-validation', function (req, res) {
+
+    var grants = req.body['grants']
+    
+    if (grants == "Yes") {
+      res.redirect('/' + version + '/' + 'create/1/grants-details')
+    }
+    else {
+      res.redirect('/' + version + '/' + 'create/1/people')
+    }
+
+  })
+
 }

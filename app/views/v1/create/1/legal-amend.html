@@ -1,7 +1,7 @@
 {% extends "v1/layouts/signed-in.html" %}
 
 {% block pageTitle %}
-  What is the expected annual transaction volume of the service once it is live? – Get assurance and approval for funding – GOV.UK Prototype Kit
+  Is the initiative proposing, amending or repelling a regulatory measure that affects business, civil society organisations or the public sector? – Get assurance and approval for funding – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -13,36 +13,37 @@
     
   <div class="govuk-grid-column-two-thirds">
 
-    <form action="digital-service-agile" method="post" novalidate>
+    <form action="grants" method="post" novalidate>
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <span class="govuk-caption-l">1. Programme or project details</span>
             <h1 class="govuk-fieldset__heading">
-              What is the expected annual transaction volume of the service once it is live?
+              Is the initiative proposing, amending or repelling a regulatory measure that affects business, civil society organisations or the public sector?
             </h1>
           </legend>
+          <p class="govuk-body">If yes, this would mean that a Regulatory Impact Assessment under the Better Regulation Framework may be required.</p>
           
           <div class="govuk-radios" data-module="govuk-radios">
             
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="transactions" name="transactions" type="radio" value="Less than 100,000 per year">
-              <label class="govuk-label govuk-radios__label" for="transactions">
-                Less than 100,000 per year
+              <input class="govuk-radios__input" id="legalAmend" name="legalAmend" type="radio" value="Yes">
+              <label class="govuk-label govuk-radios__label" for="legalAmend">
+                Yes
               </label>
             </div>
 
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="transactions-2" name="transactions" type="radio" value="More than 100,000 per year">
-              <label class="govuk-label govuk-radios__label" for="transactions-2">
-                More than 100,000 per year
+              <input class="govuk-radios__input" id="legalAmend-2" name="legalAmend" type="radio" value="No">
+              <label class="govuk-label govuk-radios__label" for="legalAmend-2">
+                No
               </label>
             </div>
             
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="transactions-3" name="transactions" type="radio" value="Not sure yet" data-aria-controls="conditional-contact">
-              <label class="govuk-label govuk-radios__label" for="transactions-3">
+              <input class="govuk-radios__input" id="legalAmend-3" name="legalAmend" type="radio" value="Not sure yet" data-aria-controls="conditional-contact">
+              <label class="govuk-label govuk-radios__label" for="legalAmend-3">
                 Not sure yet
               </label>
             </div>
