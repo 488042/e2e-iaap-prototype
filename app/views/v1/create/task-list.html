@@ -1,99 +1,369 @@
-{% extends "layouts/main.html" %}
+{% extends "v1/layouts/signed-in.html" %}
 
 {% block pageTitle %}
-  Task list template – {{ serviceName }} – GOV.UK Prototype Kit
+  Get a risk rating for my programme or project – {{serviceName}} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block containerStart %}{% endblock %}
 
 {% block content %}
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+<div class="govuk-grid-row">
 
-      <h1 class="govuk-heading-l">{{ serviceName }}</h1>
+  <div class="govuk-grid-column-two-thirds">
 
-      <h2 class="govuk-heading-m">[ Heading for first set of tasks ]</h2>
+    {% if successBanner == "true" %}
+    <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Success
+        </h2>
+      </div>
 
-      {% set completedStatus = {
-        text: "Completed"
-      } %}
-
-      {% set incompleteStatus = {
-        tag: {
-          text: "Incomplete",
-          classes: "govuk-tag--blue"
-        }
-      } %}
-
-      {# To switch between the completed and incomplete statues, use some inline logic within the component below, like this: "status: (completedStatus if ... else incompleteStatus)" #}
-
-      {{ govukTaskList({
-        idPrefix: "first-section",
-        items: [
-          {
-            title: {
-              text: "Name of first task"
-            },
-            href: "#",
-            status: completedStatus
-          },
-          {
-            title: {
-              text: "Name of second task"
-            },
-            href: "#",
-            status: incompleteStatus
-          }
-        ]
-      }) }}
-
-      <h2 class="govuk-heading-m govuk-!-margin-top-5">[ Heading for second set of tasks ]</h2>
-
-      {{ govukTaskList({
-        idPrefix: "second-section",
-        items: [
-          {
-            title: {
-              text: "Name of third task"
-            },
-            href: "#",
-            status: completedStatus
-          },
-          {
-            title: {
-              text: "Name of fifth task"
-            },
-            href: "#",
-            status: incompleteStatus
-          },
-          {
-            title: {
-              text: "Name of sixth task"
-            },
-            href: "#",
-            status: completedStatus
-          },
-          {
-            title: {
-              text: "Name of seventh task"
-            },
-            href: "#",
-            status: incompleteStatus
-          },
-          {
-            title: {
-              text: "Name of eighth task"
-            },
-            href: "#",
-            status: incompleteStatus
-          }
-        ]
-      }) }}
-
-      <div class="govuk-!-margin-top-5">
-        {{ govukButton({ text: "Apply", href: "#" }) }}
+      <div class="govuk-notification-banner__content">
+        <h3 class="govuk-notification-banner__heading">
+          {% if group1 == "complete" %}Programme or project details{% elif group2 == "complete" %}Integrated risk questions{% endif %} complete
+        </h3>
       </div>
 
     </div>
+    {% endif %}
+    
+    <h1 class="govuk-heading-l">Get a risk rating for my programme or project</h1>
+
+    <h2 class="govuk-heading-m">1. Programme or project details</h2>
+
+    {% set completedStatus = {
+      text: "Completed"
+    } %}
+    {% set completedStatusHTML = "Completed" %}
+    {% set incompleteStatus = {
+      tag: {
+        text: "Incomplete",
+        classes: "govuk-tag--blue"
+      }
+    } %}
+    {% set incompleteStatusHTML = "Incomplete" %}
+
+    {# To switch between the completed and incomplete statues, use some inline logic within the component below, like this: "status: (completedStatus if ... else incompleteStatus)" #}
+
+    <ul class="govuk-task-list">
+      <li class="govuk-task-list__item govuk-task-list__item--with-link">
+        
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link" href="1/name-and-programme-or-project" aria-describedby="first-section-1-status">
+            Basic
+          </a>
+        </div>
+
+        <div class="govuk-task-list__status" id="first-section-1-status">
+          {% if data.task1 == "complete" %}
+          Completed
+          {% else %}
+          <strong class="govuk-tag govuk-tag--blue">
+            Incomplete
+          </strong>
+          {% endif %}
+        </div>
+
+      </li>
+      {% if data.initiativeType == "Digital and data" or data.initiativeType == "Transformation and service delivery" %}
+      <li class="govuk-task-list__item govuk-task-list__item--with-link">
+        
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link" href="1/digital-service" aria-describedby="first-section-2-status">
+            Digital and service
+          </a>    
+        </div>
+
+        <div class="govuk-task-list__status" id="first-section-2-status">
+          {% if data.task2 == "complete" %}
+          Completed
+          {% else %}
+          <strong class="govuk-tag govuk-tag--blue">
+            Incomplete
+          </strong>
+          {% endif %}
+        </div>
+        
+      </li>
+      <li class="govuk-task-list__item govuk-task-list__item--with-link">
+        
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link" href="1/data-and-privacy" aria-describedby="first-section-3-status">
+            Data and privacy
+          </a>
+        </div>
+
+        <div class="govuk-task-list__status" id="first-section-3-status">
+          {% if data.task3 == "complete" %}
+          Completed
+          {% else %}
+          <strong class="govuk-tag govuk-tag--blue">
+            Incomplete
+          </strong>
+          {% endif %}
+        </div>
+
+      </li>
+      <li class="govuk-task-list__item govuk-task-list__item--with-link">
+
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link" href="1/cyber-and-security" aria-describedby="first-section-4-status">
+            Cyber and security
+          </a>
+        </div>
+
+        <div class="govuk-task-list__status" id="first-section-4-status">
+          {% if data.task4 == "complete" %}
+          Completed
+          {% else %}
+          <strong class="govuk-tag govuk-tag--blue">
+            Incomplete
+          </strong>
+          {% endif %}
+        </div>
+
+      </li>
+      {% endif %}
+      {% if data.initiativeType == "Infrastructure and construction" %}
+      <li class="govuk-task-list__item govuk-task-list__item--with-link">
+
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link" href="1/construction" aria-describedby="first-section-5-status">
+            Construction
+          </a>
+        </div>
+
+        <div class="govuk-task-list__status" id="first-section-5-status">
+          {% if data.task5 == "complete" %}
+          Completed
+          {% else %}
+          <strong class="govuk-tag govuk-tag--blue">
+            Incomplete
+          </strong>
+          {% endif %}
+        </div>
+
+      </li>
+      <li class="govuk-task-list__item govuk-task-list__item--with-link">
+        
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link" href="1/property" aria-describedby="first-section-6-status">
+            Property
+          </a>
+        </div>
+
+        <div class="govuk-task-list__status" id="first-section-6-status">
+          {% if data.task6 == "complete" %}
+          Completed
+          {% else %}
+          <strong class="govuk-tag govuk-tag--blue">
+            Incomplete
+          </strong>
+          {% endif %}
+        </div>
+
+      </li>
+      {% endif %}
+      <li class="govuk-task-list__item govuk-task-list__item--with-link">
+        
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link" href="1/cross-government" aria-describedby="first-section-7-status">
+            Cross government
+          </a>
+        </div>
+
+        <div class="govuk-task-list__status" id="first-section-7-status">
+          {% if data.task7 == "complete" %}
+          Completed
+          {% else %}
+          <strong class="govuk-tag govuk-tag--blue">
+            Incomplete
+          </strong>
+          {% endif %}
+        </div>
+
+      </li>
+      <li class="govuk-task-list__item govuk-task-list__item--with-link">
+        
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link" href="1/spend" aria-describedby="first-section-8-status">
+            Commercial and spend controls
+          </a>
+        </div>
+
+        <div class="govuk-task-list__status" id="first-section-8-status">
+          {% if data.task8 == "complete" %}
+          Completed
+          {% else %}
+          <strong class="govuk-tag govuk-tag--blue">
+            Incomplete
+          </strong>
+          {% endif %}
+        </div>
+
+      </li>
+      <li class="govuk-task-list__item govuk-task-list__item--with-link">
+        
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link" href="1/legal" aria-describedby="first-section-9-status">
+            Legal and regulatory
+          </a>
+        </div>
+
+        <div class="govuk-task-list__status" id="first-section-9-status">
+          {% if data.task9 == "complete" %}
+          Completed
+          {% else %}
+          <strong class="govuk-tag govuk-tag--blue">
+            Incomplete
+          </strong>
+          {% endif %}
+        </div>
+
+      </li>
+      <li class="govuk-task-list__item govuk-task-list__item--with-link">
+        
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link" href="1/grants" aria-describedby="first-section-10-status">
+            Grants
+          </a>
+        </div>
+
+        <div class="govuk-task-list__status" id="first-section-10-status">
+          {% if data.task10 == "complete" %}
+          Completed
+          {% else %}
+          <strong class="govuk-tag govuk-tag--blue">
+            Incomplete
+          </strong>
+          {% endif %}
+        </div>
+
+      </li>
+      <li class="govuk-task-list__item govuk-task-list__item--with-link">
+        
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link" href="1/people" aria-describedby="first-section-11-status">
+            People
+          </a>
+        </div>
+
+        <div class="govuk-task-list__status" id="first-section-11-status">
+          {% if data.task11 == "complete" %}
+          Completed
+          {% else %}
+          <strong class="govuk-tag govuk-tag--blue">
+            Incomplete
+          </strong>
+          {% endif %}
+        </div>
+
+      </li>
+      <li class="govuk-task-list__item govuk-task-list__item--with-link">
+        
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link" href="1/analytical" aria-describedby="first-section-12-status">
+            Analytical assurance
+          </a>
+        </div>
+
+        <div class="govuk-task-list__status" id="first-section-12-status">
+          {% if data.task12 == "complete" %}
+          Completed
+          {% else %}
+          <strong class="govuk-tag govuk-tag--blue">
+            Incomplete
+          </strong>
+          {% endif %}
+        </div>
+
+      </li>
+      <li class="govuk-task-list__item govuk-task-list__item--with-link">
+        
+        <div class="govuk-task-list__name-and-hint">
+          <a class="govuk-link govuk-task-list__link" href="1/lifecycle" aria-describedby="first-section-13-status">
+            Lifecycle
+          </a>
+        </div>
+
+        <div class="govuk-task-list__status" id="first-section-13-status">
+          {% if data.task13 == "complete" %}
+          Completed
+          {% else %}
+          <strong class="govuk-tag govuk-tag--blue">
+            Incomplete
+          </strong>
+          {% endif %}
+        </div>
+
+      </li>
+    </ul>
+
+    <h2 class="govuk-heading-m govuk-!-margin-top-5">2. Integrated risk questions</h2>
+
+    {{govukTaskList({
+      idPrefix: "first-section",
+      items: [
+        {
+          title: {
+            text: "General risks"
+          },
+          href: "2/risk",
+          status: (completedStatus if data.task14 == "complete" else incompleteStatus)
+        },
+        {
+          title: {
+            text: "GDS risks"
+          },
+          href: "2/gds-1",
+          status: (completedStatus if data.task15 == "complete" else incompleteStatus)
+        },
+        {
+          title: {
+            text: "HMT risks"
+          },
+          href: "2/hmt-1",
+          status: (completedStatus if data.task16 == "complete" else incompleteStatus)
+        },
+        {
+          title: {
+            text: "NISTA risks"
+          },
+          href: "2/nista-1",
+          status: (completedStatus if data.task17 == "complete" else incompleteStatus)
+        }
+      ]
+    })}}
+
+    <h2 class="govuk-heading-m govuk-!-margin-top-5">3. SRO assurance</h2>
+
+    {{govukTaskList({
+      idPrefix: "first-section",
+      items: [
+        {
+          title: {
+            text: "Do you need SRO approval"
+          },
+          href: "#",
+          status: incompleteStatus
+        },
+        {
+          title: {
+            text: "Choose an SRO approver"
+          },
+          href: "#",
+          status: incompleteStatus
+        }
+      ]
+    })}}
+
+    <div class="govuk-!-margin-top-5">
+      {{govukButton({ text: "Check your answers", href: "#" })}}
+    </div>
+
   </div>
+
+</div>
 {% endblock %}

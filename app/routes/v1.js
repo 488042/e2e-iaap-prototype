@@ -20,7 +20,7 @@ module.exports = function(router) {
 
   })
 
-  router.post('/' + version + '/' + 'create/1/programme-type-validation', function (req, res) {
+  /* router.post('/' + version + '/' + 'create/1/programme-type-validation', function (req, res) {
 
     var initiativeType = req.body['initiativeType']
     
@@ -34,7 +34,7 @@ module.exports = function(router) {
       res.redirect('/' + version + '/' + 'create/1/cross-government')
     }
 
-  })
+  }) */
 
   router.post('/' + version + '/' + 'create/1/digital-service-agile-validation', function (req, res) {
 
@@ -70,9 +70,18 @@ module.exports = function(router) {
       res.redirect('/' + version + '/' + 'create/1/grants-details')
     }
     else {
-      res.redirect('/' + version + '/' + 'create/1/people')
+      res.redirect('/' + version + '/' + 'create/task-list?task10=complete')
     }
 
+  })
+
+  router.get('/' + version + '/' + 'create/task-list', function (req, res) {
+    res.render(version + '/create/task-list', {
+      'successBanner' : req.query.successBanner,
+      'group1' : req.query.group1,
+      'group2' : req.query.group2,
+      'group3' : req.query.group3
+		})
   })
 
 }

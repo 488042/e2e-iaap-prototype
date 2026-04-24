@@ -1,7 +1,7 @@
 {% extends "v1/layouts/signed-in.html" %}
 
 {% block pageTitle %}
-  Does the initiative involve building, civil engineering or infrastructure construction works? – Get assurance and approval for funding – GOV.UK Prototype Kit
+  Is the initiative planning an impact evaluation of its intervention? – Get assurance and approval for funding – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -13,38 +13,45 @@
     
   <div class="govuk-grid-column-two-thirds">
 
-    <form action="construction-value" method="post" novalidate>
+    <form action="../task-list?task12=complete" method="post" novalidate>
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <span class="govuk-caption-l">1. Programme or project details</span>
             <h1 class="govuk-fieldset__heading">
-              Does the initiative involve building, civil engineering or infrastructure construction works?
+              Is the initiative planning an impact evaluation of its intervention?
             </h1>
           </legend>
-          <p class="govuk-body">This includes new build, major refurbishment, demolition and installation.</p>
+          <p class="govuk-hint">For example, measuring what's changed as a result of the project.</p>
           
           <div class="govuk-radios" data-module="govuk-radios">
             
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="construction" name="construction" type="radio" value="Yes">
-              <label class="govuk-label govuk-radios__label" for="construction">
-                Yes
+              <input class="govuk-radios__input" id="analyticalImpactEvaluation" name="analyticalImpactEvaluation" type="radio" value="Yes, impact evaluation planned">
+              <label class="govuk-label govuk-radios__label" for="analyticalImpactEvaluation">
+                Yes, impact evaluation planned
               </label>
             </div>
 
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="construction-2" name="construction" type="radio" value="No">
-              <label class="govuk-label govuk-radios__label" for="construction-2">
-                No
+              <input class="govuk-radios__input" id="analyticalImpactEvaluation-2" name="analyticalImpactEvaluation" type="radio" value="Yes, process of value for money evaluation only">
+              <label class="govuk-label govuk-radios__label" for="analyticalImpactEvaluation-2">
+                Yes, process of value for money evaluation only
               </label>
             </div>
             
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="construction-3" name="construction" type="radio" value="Not sure yet" data-aria-controls="conditional-contact">
-              <label class="govuk-label govuk-radios__label" for="construction-3">
-                Not sure yet
+              <input class="govuk-radios__input" id="analyticalImpactEvaluation-3" name="analyticalImpactEvaluation" type="radio" value="Not yet decided" data-aria-controls="conditional-contact">
+              <label class="govuk-label govuk-radios__label" for="analyticalImpactEvaluation-3">
+                Not yet decided
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="analyticalImpactEvaluation-4" name="analyticalImpactEvaluation" type="radio" value="No evaluation planned" data-aria-controls="conditional-contact">
+              <label class="govuk-label govuk-radios__label" for="analyticalImpactEvaluation-4">
+                No evaluation planned
               </label>
             </div>
 

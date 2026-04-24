@@ -1,7 +1,7 @@
 {% extends "v1/layouts/signed-in.html" %}
 
 {% block pageTitle %}
-  Does the initiative involve building, civil engineering or infrastructure construction works? – Get assurance and approval for funding – GOV.UK Prototype Kit
+  If your initiative is above your department's DAL but below the £1bn GMPP threshold, do you expect it to sit on the Departmental Major Projects Portfolio (DMPP)? – Get assurance and approval for funding – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -13,37 +13,43 @@
     
   <div class="govuk-grid-column-two-thirds">
 
-    <form action="construction-value" method="post" novalidate>
+    <form action="../task-list?task14=complete" method="post" novalidate>
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-            <span class="govuk-caption-l">1. Programme or project details</span>
+            <span class="govuk-caption-l">2. Integrated risk questions</span>
             <h1 class="govuk-fieldset__heading">
-              Does the initiative involve building, civil engineering or infrastructure construction works?
+              If your initiative is above your department's DAL but below the £1bn GMPP threshold, do you expect it to sit on the Departmental Major Projects Portfolio (DMPP)?
             </h1>
           </legend>
-          <p class="govuk-body">This includes new build, major refurbishment, demolition and installation.</p>
           
           <div class="govuk-radios" data-module="govuk-radios">
             
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="construction" name="construction" type="radio" value="Yes">
-              <label class="govuk-label govuk-radios__label" for="construction">
-                Yes
+              <input class="govuk-radios__input" id="riskDmpp" name="riskDmpp" type="radio" value="Yes, DMPP expected">
+              <label class="govuk-label govuk-radios__label" for="riskDmpp">
+                Yes, DMPP expected
               </label>
             </div>
 
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="construction-2" name="construction" type="radio" value="No">
-              <label class="govuk-label govuk-radios__label" for="construction-2">
-                No
+              <input class="govuk-radios__input" id="riskDmpp-2" name="riskDmpp" type="radio" value="No, below DAL so neither GMPP nor DMPP">
+              <label class="govuk-label govuk-radios__label" for="riskDmpp-2">
+                No, below DAL so neither GMPP nor DMPP
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="riskDmpp-3" name="riskDmpp" type="radio" value="No, we expect this to be on the GMPP instead">
+              <label class="govuk-label govuk-radios__label" for="riskDmpp-3">
+                No, we expect this to be on the GMPP instead
               </label>
             </div>
             
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="construction-3" name="construction" type="radio" value="Not sure yet" data-aria-controls="conditional-contact">
-              <label class="govuk-label govuk-radios__label" for="construction-3">
+              <input class="govuk-radios__input" id="riskDmpp-4" name="riskDmpp" type="radio" value="Not sure yet" data-aria-controls="conditional-contact">
+              <label class="govuk-label govuk-radios__label" for="riskDmpp-4">
                 Not sure yet
               </label>
             </div>

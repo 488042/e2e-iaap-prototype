@@ -1,7 +1,7 @@
 {% extends "v1/layouts/signed-in.html" %}
 
 {% block pageTitle %}
-  Does the initiative involve building, civil engineering or infrastructure construction works? – Get assurance and approval for funding – GOV.UK Prototype Kit
+  What is your best current estimate of the initiative's whole-life cost, in nominal undiscounted public-sector cost from initiation through operation to closure? – Get assurance and approval for funding – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -13,37 +13,57 @@
     
   <div class="govuk-grid-column-two-thirds">
 
-    <form action="construction-value" method="post" novalidate>
+    <form action="risk-dal" method="post" novalidate>
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-            <span class="govuk-caption-l">1. Programme or project details</span>
+            <span class="govuk-caption-l">2. Integrated risk questions</span>
             <h1 class="govuk-fieldset__heading">
-              Does the initiative involve building, civil engineering or infrastructure construction works?
+              What is your best current estimate of the initiative's whole-life cost, in nominal undiscounted public-sector cost from initiation through operation to closure?
             </h1>
           </legend>
-          <p class="govuk-body">This includes new build, major refurbishment, demolition and installation.</p>
           
           <div class="govuk-radios" data-module="govuk-radios">
             
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="construction" name="construction" type="radio" value="Yes">
-              <label class="govuk-label govuk-radios__label" for="construction">
-                Yes
+              <input class="govuk-radios__input" id="risk" name="risk" type="radio" value="Below £50 million">
+              <label class="govuk-label govuk-radios__label" for="risk">
+                Below £50 million
               </label>
             </div>
 
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="construction-2" name="construction" type="radio" value="No">
-              <label class="govuk-label govuk-radios__label" for="construction-2">
-                No
+              <input class="govuk-radios__input" id="risk-2" name="risk" type="radio" value="£50 million to £250 million">
+              <label class="govuk-label govuk-radios__label" for="risk-2">
+                £50 million to £250 million
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="risk-3" name="risk" type="radio" value="£250 million to £1 billion">
+              <label class="govuk-label govuk-radios__label" for="risk-3">
+                £250 million to £1 billion
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="risk-4" name="risk" type="radio" value="£1 billion to £10 billion">
+              <label class="govuk-label govuk-radios__label" for="risk-4">
+                £1 billion to £10 billion
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="risk-5" name="risk" type="radio" value="Over £10 billion">
+              <label class="govuk-label govuk-radios__label" for="risk-5">
+                Over £10 billion
               </label>
             </div>
             
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="construction-3" name="construction" type="radio" value="Not sure yet" data-aria-controls="conditional-contact">
-              <label class="govuk-label govuk-radios__label" for="construction-3">
+              <input class="govuk-radios__input" id="risk-6" name="risk" type="radio" value="Not sure yet" data-aria-controls="conditional-contact">
+              <label class="govuk-label govuk-radios__label" for="risk-6">
                 Not sure yet
               </label>
             </div>

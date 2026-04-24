@@ -1,7 +1,7 @@
 {% extends "v1/layouts/signed-in.html" %}
 
 {% block pageTitle %}
-  Does the initiative involve building, civil engineering or infrastructure construction works? – Get assurance and approval for funding – GOV.UK Prototype Kit
+  HMT [QUESTION TEXT]? – Get assurance and approval for funding – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -13,37 +13,36 @@
     
   <div class="govuk-grid-column-two-thirds">
 
-    <form action="construction-value" method="post" novalidate>
+    <form action="hmt-2" method="post" novalidate>
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-            <span class="govuk-caption-l">1. Programme or project details</span>
+            <span class="govuk-caption-l">2. Integrated risk questions</span>
             <h1 class="govuk-fieldset__heading">
-              Does the initiative involve building, civil engineering or infrastructure construction works?
+              HMT [QUESTION TEXT]
             </h1>
           </legend>
-          <p class="govuk-body">This includes new build, major refurbishment, demolition and installation.</p>
           
           <div class="govuk-radios" data-module="govuk-radios">
             
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="construction" name="construction" type="radio" value="Yes">
-              <label class="govuk-label govuk-radios__label" for="construction">
+              <input class="govuk-radios__input" id="hmt" name="hmt" type="radio" value="Yes">
+              <label class="govuk-label govuk-radios__label" for="hmt">
                 Yes
               </label>
             </div>
 
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="construction-2" name="construction" type="radio" value="No">
-              <label class="govuk-label govuk-radios__label" for="construction-2">
+              <input class="govuk-radios__input" id="hmt-2" name="hmt" type="radio" value="No">
+              <label class="govuk-label govuk-radios__label" for="hmt-2">
                 No
               </label>
             </div>
             
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="construction-3" name="construction" type="radio" value="Not sure yet" data-aria-controls="conditional-contact">
-              <label class="govuk-label govuk-radios__label" for="construction-3">
+              <input class="govuk-radios__input" id="hmt-3" name="hmt" type="radio" value="Not sure yet" data-aria-controls="conditional-contact">
+              <label class="govuk-label govuk-radios__label" for="hmt-3">
                 Not sure yet
               </label>
             </div>

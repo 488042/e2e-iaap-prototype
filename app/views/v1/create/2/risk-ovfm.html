@@ -1,7 +1,7 @@
 {% extends "v1/layouts/signed-in.html" %}
 
 {% block pageTitle %}
-  Will the initiative process any special category personal data? – Get assurance and approval for funding – GOV.UK Prototype Kit
+  Thinking about the initiative against the six OVfM mega project tests, which of the following apply? – Get assurance and approval for funding – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -13,65 +13,81 @@
     
   <div class="govuk-grid-column-two-thirds">
 
-    <form action="data-and-privacy-ai" method="post" novalidate>
+    <form action="risk-dmpp" method="post" novalidate>
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-            <span class="govuk-caption-l">1. Programme or project details</span>
+            <span class="govuk-caption-l">2. Integrated risk questions</span>
             <h1 class="govuk-fieldset__heading">
-              Will the initiative process any special category personal data?
+              Thinking about the initiative against the six OVfM mega project tests, which of the following apply?
             </h1>
           </legend>
-          <p class="govuk-body">Special category personal data includes children's data at scale, large scale systematic monitoring, or data that could affect people's access to services, benefits and rights.</p>
           
           <div class="govuk-checkboxes" data-module="govuk-checkboxes">
       
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="dataAndPrivacySpecial" name="dataAndPrivacySpecial" type="checkbox" value="Special category personal data" aria-describedby="dataAndPrivacySpecial-hint">
-              <label class="govuk-label govuk-checkboxes__label" for="dataAndPrivacySpecial">
-                Special category personal data
+              <input class="govuk-checkboxes__input" id="riskOvfm" name="riskOvfm" type="checkbox" value="Whole life cost over £10bn">
+              <label class="govuk-label govuk-checkboxes__label" for="riskOvfm">
+                Whole life cost over £10bn
+              </label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="riskOvfm-2" name="riskOvfm" type="checkbox" value="Transformational impact on the economy, society or national security">
+              <label class="govuk-label govuk-checkboxes__label" for="riskOvfm-2">
+                Transformational impact on the economy, society or national security
+              </label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="riskOvfm-3" name="riskOvfm" type="checkbox" value="Cross cutting" aria-describedby="riskOvfm-3-hint">
+              <label class="govuk-label govuk-checkboxes__label" for="riskOvfm-3">
+                Cross cutting
               </label>
 
-              <div id="dataAndPrivacySpecial-hint" class="govuk-hint govuk-checkboxes__hint">
-                including health, ethnicity and biometrics
+              <div id="riskOvfm-3-hint" class="govuk-hint govuk-checkboxes__hint">
+                impacts multiple government departments or sectors
               </div>
 
             </div>
 
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="dataAndPrivacySpecial-2" name="dataAndPrivacySpecial" type="checkbox" value="Children's data at scale">
-              <label class="govuk-label govuk-checkboxes__label" for="dataAndPrivacySpecial-2">
-                Children's data at scale
+              <input class="govuk-checkboxes__input" id="riskOvfm-4" name="riskOvfm" type="checkbox" value="Non scalable" aria-describedby="riskOvfm-4-hint">
+              <label class="govuk-label govuk-checkboxes__label" for="riskOvfm-4">
+                Non scalable
+              </label>
+
+              <div id="riskOvfm-4-hint" class="govuk-hint govuk-checkboxes__hint">
+                cannot be broken into smaller independent projects
+              </div>
+
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="riskOvfm-5" name="riskOvfm" type="checkbox" value="Takes more than 10 years to deliver">
+              <label class="govuk-label govuk-checkboxes__label" for="riskOvfm-5">
+                Takes more than 10 years to deliver
               </label>
             </div>
 
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="dataAndPrivacySpecial-3" name="dataAndPrivacySpecial" type="checkbox" value="Large scale systematic monitoring of a public area or population">
-              <label class="govuk-label govuk-checkboxes__label" for="dataAndPrivacySpecial-3">
-                Large scale systematic monitoring of a public area or population
+              <input class="govuk-checkboxes__input" id="riskOvfm-6" name="riskOvfm" type="checkbox" value="Takes less than 50 years to deliver" aria-describedby="riskOvfm-6-hint">
+              <label class="govuk-label govuk-checkboxes__label" for="riskOvfm-6">
+                Takes less than 50 years to deliver
               </label>
-            </div>
 
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="dataAndPrivacySpecial-4" name="dataAndPrivacySpecial" type="checkbox" value="Data used in decisions affecting access to services, benefits or rights">
-              <label class="govuk-label govuk-checkboxes__label" for="dataAndPrivacySpecial-4">
-                Data used in decisions affecting access to services, benefits or rights
-              </label>
-            </div>
+              <div id="riskOvfm-6-hint" class="govuk-hint govuk-checkboxes__hint">
+                for example, not ongoing BAU
+              </div>
 
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="dataAndPrivacySpecial-5" name="dataAndPrivacySpecial" type="checkbox" value="None of above">
-              <label class="govuk-label govuk-checkboxes__label" for="dataAndPrivacySpecial-5">
-                None of above
-              </label>
             </div>
 
             <div class="govuk-checkboxes__divider">or</div>
 
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="dataAndPrivacySpecial-6" name="dataAndPrivacySpecial" type="checkbox" value="Not sure yet">
-              <label class="govuk-label govuk-checkboxes__label" for="dataAndPrivacySpecial-6">
+              <input class="govuk-checkboxes__input" id="riskOvfm-7" name="riskOvfm" type="checkbox" value="Not sure yet">
+              <label class="govuk-label govuk-checkboxes__label" for="riskOvfm-7">
                 Not sure yet
               </label>
             </div>

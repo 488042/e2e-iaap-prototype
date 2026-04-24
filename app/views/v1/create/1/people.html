@@ -1,7 +1,7 @@
 {% extends "v1/layouts/signed-in.html" %}
 
 {% block pageTitle %}
-  Will the initiative process any special category personal data? – Get assurance and approval for funding – GOV.UK Prototype Kit
+  Does the initiative involve a workforce transfer between organisations to which Transfer of Undertakings (Protection of Employment) regulations (TUPE) applies, or a significant organisational change affecting staff? – Get assurance and approval for funding – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -13,56 +13,58 @@
     
   <div class="govuk-grid-column-two-thirds">
 
-    <form action="data-and-privacy-ai" method="post" novalidate>
+    <form action="../task-list?task11=complete" method="post" novalidate>
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <span class="govuk-caption-l">1. Programme or project details</span>
             <h1 class="govuk-fieldset__heading">
-              Will the initiative process any special category personal data?
+              Does the initiative involve a workforce transfer between organisations to which Transfer of Undertakings (Protection of Employment) regulations (TUPE) applies, or a significant organisational change affecting staff?
             </h1>
           </legend>
-          <p class="govuk-body">Special category personal data includes children's data at scale, large scale systematic monitoring, or data that could affect people's access to services, benefits and rights.</p>
+          <p class="govuk-hint">For example, a restructure, bulk exits of more than 20 staff, major outsourcing or insourcing.</p>
           
           <div class="govuk-checkboxes" data-module="govuk-checkboxes">
       
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="dataAndPrivacySpecial" name="dataAndPrivacySpecial" type="checkbox" value="Special category personal data" aria-describedby="dataAndPrivacySpecial-hint">
-              <label class="govuk-label govuk-checkboxes__label" for="dataAndPrivacySpecial">
-                Special category personal data
-              </label>
-
-              <div id="dataAndPrivacySpecial-hint" class="govuk-hint govuk-checkboxes__hint">
-                including health, ethnicity and biometrics
-              </div>
-
-            </div>
-
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="dataAndPrivacySpecial-2" name="dataAndPrivacySpecial" type="checkbox" value="Children's data at scale">
-              <label class="govuk-label govuk-checkboxes__label" for="dataAndPrivacySpecial-2">
-                Children's data at scale
+              <input class="govuk-checkboxes__input" id="people" name="people" type="checkbox" value="TUPE transfer in">
+              <label class="govuk-label govuk-checkboxes__label" for="people">
+                <abbr title="Transfer of Undertakings (Protection of Employment)">TUPE</abbr> transfer in
               </label>
             </div>
 
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="dataAndPrivacySpecial-3" name="dataAndPrivacySpecial" type="checkbox" value="Large scale systematic monitoring of a public area or population">
-              <label class="govuk-label govuk-checkboxes__label" for="dataAndPrivacySpecial-3">
-                Large scale systematic monitoring of a public area or population
+              <input class="govuk-checkboxes__input" id="people-2" name="people" type="checkbox" value="TUPE transfer out">
+              <label class="govuk-label govuk-checkboxes__label" for="people-2">
+                <abbr title="Transfer of Undertakings (Protection of Employment)">TUPE</abbr> transfer out
               </label>
             </div>
 
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="dataAndPrivacySpecial-4" name="dataAndPrivacySpecial" type="checkbox" value="Data used in decisions affecting access to services, benefits or rights">
-              <label class="govuk-label govuk-checkboxes__label" for="dataAndPrivacySpecial-4">
-                Data used in decisions affecting access to services, benefits or rights
+              <input class="govuk-checkboxes__input" id="people-3" name="people" type="checkbox" value="Significant restructure of organisation">
+              <label class="govuk-label govuk-checkboxes__label" for="people-3">
+                Significant restructure of organisation
               </label>
             </div>
 
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="dataAndPrivacySpecial-5" name="dataAndPrivacySpecial" type="checkbox" value="None of above">
-              <label class="govuk-label govuk-checkboxes__label" for="dataAndPrivacySpecial-5">
+              <input class="govuk-checkboxes__input" id="people-4" name="people" type="checkbox" value="Bulk exits of more than 20 staff">
+              <label class="govuk-label govuk-checkboxes__label" for="people-4">
+                Bulk exits of more than 20 staff
+              </label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="people-5" name="people" type="checkbox" value="Major outsourcing or insourcing">
+              <label class="govuk-label govuk-checkboxes__label" for="people-5">
+                Major outsourcing or insourcing
+              </label>
+            </div>
+
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="people-6" name="people" type="checkbox" value="None of above">
+              <label class="govuk-label govuk-checkboxes__label" for="people-6">
                 None of above
               </label>
             </div>
@@ -70,8 +72,8 @@
             <div class="govuk-checkboxes__divider">or</div>
 
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="dataAndPrivacySpecial-6" name="dataAndPrivacySpecial" type="checkbox" value="Not sure yet">
-              <label class="govuk-label govuk-checkboxes__label" for="dataAndPrivacySpecial-6">
+              <input class="govuk-checkboxes__input" id="people-7" name="people" type="checkbox" value="Not sure yet">
+              <label class="govuk-label govuk-checkboxes__label" for="people-7">
                 Not sure yet
               </label>
             </div>

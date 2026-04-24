@@ -1,7 +1,7 @@
 {% extends "v1/layouts/signed-in.html" %}
 
 {% block pageTitle %}
-  Does the initiative involve building, civil engineering or infrastructure construction works? – Get assurance and approval for funding – GOV.UK Prototype Kit
+  Have you started preparing your initial business case? – Get assurance and approval for funding – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -13,38 +13,37 @@
     
   <div class="govuk-grid-column-two-thirds">
 
-    <form action="construction-value" method="post" novalidate>
+    <form action="../task-list?successBanner=true&group1=complete&task13=complete" method="post" novalidate>
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <span class="govuk-caption-l">1. Programme or project details</span>
             <h1 class="govuk-fieldset__heading">
-              Does the initiative involve building, civil engineering or infrastructure construction works?
+              Have you started preparing your initial business case?
             </h1>
           </legend>
-          <p class="govuk-body">This includes new build, major refurbishment, demolition and installation.</p>
           
           <div class="govuk-radios" data-module="govuk-radios">
             
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="construction" name="construction" type="radio" value="Yes">
-              <label class="govuk-label govuk-radios__label" for="construction">
-                Yes
+              <input class="govuk-radios__input" id="lifecycle" name="lifecycle" type="radio" value="Yes, Programme Business Case (PBC) in preparation">
+              <label class="govuk-label govuk-radios__label" for="lifecycle">
+                Yes, Programme Business Case (PBC) in preparation
               </label>
             </div>
 
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="construction-2" name="construction" type="radio" value="No">
-              <label class="govuk-label govuk-radios__label" for="construction-2">
-                No
+              <input class="govuk-radios__input" id="lifecycle-2" name="lifecycle" type="radio" value="Yes, Strategic Outline Case (SOC) in preparation">
+              <label class="govuk-label govuk-radios__label" for="lifecycle-2">
+                Yes, Strategic Outline Case (SOC) in preparation
               </label>
             </div>
-            
+
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="construction-3" name="construction" type="radio" value="Not sure yet" data-aria-controls="conditional-contact">
-              <label class="govuk-label govuk-radios__label" for="construction-3">
-                Not sure yet
+              <input class="govuk-radios__input" id="lifecycle-3" name="lifecycle" type="radio" value="Not yet, pre business case">
+              <label class="govuk-label govuk-radios__label" for="lifecycle-3">
+                Not yet, pre business case
               </label>
             </div>
 
