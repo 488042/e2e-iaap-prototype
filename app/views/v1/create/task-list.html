@@ -22,13 +22,14 @@
 
       <div class="govuk-notification-banner__content">
         <h3 class="govuk-notification-banner__heading">
-          {% if group1 == "complete" %}Programme or project details{% elif group2 == "complete" %}Integrated risk questions{% endif %} complete
+          {% if group1 == "complete" %}Programme or project details{% elif group2 == "complete" %}Integrated risk questions{% elif group3 == "complete" %}SRO assurance{% endif %} complete
         </h3>
       </div>
 
     </div>
     {% endif %}
     
+    <span class="govuk-caption-l">{{data.initiativeName}}</span>
     <h1 class="govuk-heading-l">Get a risk rating for my programme or project</h1>
 
     <h2 class="govuk-heading-m">1. Programme or project details</h2>
@@ -346,22 +347,17 @@
           title: {
             text: "Do you need SRO approval"
           },
-          href: "#",
-          status: incompleteStatus
-        },
-        {
-          title: {
-            text: "Choose an SRO approver"
-          },
-          href: "#",
-          status: incompleteStatus
+          href: "3/do-you-need-sro-approval",
+          status: (completedStatus if data.task18 == "complete" else incompleteStatus)
         }
       ]
     })}}
 
+    {% if data.group1 == "complete" and data.group2 == "complete" and data.group3 == "complete" %}
     <div class="govuk-!-margin-top-5">
       {{govukButton({ text: "Check your answers", href: "#" })}}
     </div>
+    {% endif %}
 
   </div>
 

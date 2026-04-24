@@ -84,4 +84,17 @@ module.exports = function(router) {
 		})
   })
 
+  router.post('/' + version + '/' + 'create/3/do-you-need-sro-approval-validation', function (req, res) {
+
+    var sro = req.body['sro']
+    
+    if (sro == "Yes") {
+      res.redirect('/' + version + '/' + 'create/3/select-sro-approver')
+    }
+    else {
+      res.redirect('/' + version + '/' + 'create/task-list?successBanner=true&group3=complete&task18=complete')
+    }
+
+  })
+
 }
