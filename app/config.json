@@ -1,5 +1,5 @@
 {
-  "serviceName": "End to end integrated assurance",
+  "serviceName": "Integrated assurance",
   "useServiceNavigation": true,
   "plugins": {
     "govuk-frontend": {
