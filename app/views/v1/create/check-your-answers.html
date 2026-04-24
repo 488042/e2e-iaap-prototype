@@ -1,94 +1,411 @@
-{% extends "layouts/main.html" %}
+{% extends "v1/layouts/signed-in.html" %}
 
 {% block pageTitle %}
-  Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+  Check your answers – Get assurance and approval for funding – GOV.UK Prototype Kit
 {% endblock %}
 
-{% block containerStart %}
-  {{ govukBackLink({
-    text: "Back",
-    href: "javascript:window.history.back()"
-  }) }}
+{% block beforeContent %}
+  <a href="task-list" class="govuk-back-link">Back</a>
 {% endblock %}
 
 {% block content %}
+  {% macro answerHtml(value) %}
+    {% if value %}
+      {% if value.push %}
+        {{ value | join("<br>") | safe }}
+      {% else %}
+        {{ value }}
+      {% endif %}
+    {% else %}
+      Not provided
+    {% endif %}
+  {% endmacro %}
+
+  {% set isProgramme = data.programmeOrProject == "Programme" %}
+  {% set isDigitalOrTransformation = data.initiativeType == "Digital and data" or data.initiativeType == "Transformation and service delivery" %}
+  {% set isInfrastructure = data.initiativeType == "Infrastructure and construction" %}
+
+  {% set programmeRows = [] %}
+  {% set riskRows = [] %}
+  {% set sroRows = [] %}
+
+  {% if data.initiativeName %}
+    {% set _ = programmeRows.push({
+      key: { text: "Name" },
+      value: { html: answerHtml(data.initiativeName) },
+      actions: { items: [{ href: "1/name-and-programme-or-project", text: "Change", visuallyHiddenText: "name" }] }
+    }) %}
+  {% endif %}
+  {% if data.programmeOrProject %}
+    {% set _ = programmeRows.push({
+      key: { text: "Programme or project" },
+      value: { html: answerHtml(data.programmeOrProject) },
+      actions: { items: [{ href: "1/name-and-programme-or-project", text: "Change", visuallyHiddenText: "whether this is a programme or project" }] }
+    }) %}
+  {% endif %}
+  {% if isProgramme and data.gate0 %}
+    {% set _ = programmeRows.push({
+      key: { text: "Gate 0" },
+      value: { html: answerHtml(data.gate0) },
+      actions: { items: [{ href: "1/gate-0", text: "Change", visuallyHiddenText: "Gate 0 answer" }] }
+    }) %}
+  {% endif %}
+  {% if data.initiativeType %}
+    {% set _ = programmeRows.push({
+      key: { text: "Initiative type" },
+      value: { html: answerHtml(data.initiativeType) },
+      actions: { items: [{ href: "1/programme-type", text: "Change", visuallyHiddenText: "initiative type" }] }
+    }) %}
+  {% endif %}
+
+  {% if isDigitalOrTransformation and data.digitalService %}
+    {% set _ = programmeRows.push({
+      key: { text: "Digital or technology element" },
+      value: { html: answerHtml(data.digitalService) },
+      actions: { items: [{ href: "1/digital-service", text: "Change", visuallyHiddenText: "digital or technology element" }] }
+    }) %}
+  {% endif %}
+  {% if isDigitalOrTransformation and data.transactions %}
+    {% set _ = programmeRows.push({
+      key: { text: "Expected yearly transactions" },
+      value: { html: answerHtml(data.transactions) },
+      actions: { items: [{ href: "1/digital-service-transactions", text: "Change", visuallyHiddenText: "expected yearly transactions" }] }
+    }) %}
+  {% endif %}
+  {% if isDigitalOrTransformation and data.agile %}
+    {% set _ = programmeRows.push({
+      key: { text: "Delivery approach" },
+      value: { html: answerHtml(data.agile) },
+      actions: { items: [{ href: "1/digital-service-agile", text: "Change", visuallyHiddenText: "delivery approach" }] }
+    }) %}
+  {% endif %}
+  {% if isDigitalOrTransformation and (data.agile == "Fully agile" or data.agile == "Blended agile") and data.phase %}
+    {% set _ = programmeRows.push({
+      key: { text: "Delivery phase" },
+      value: { html: answerHtml(data.phase) },
+      actions: { items: [{ href: "1/digital-service-phase", text: "Change", visuallyHiddenText: "delivery phase" }] }
+    }) %}
+  {% endif %}
+  {% if isDigitalOrTransformation and data.cddo %}
+    {% set _ = programmeRows.push({
+      key: { text: "CDDO spend controls needed" },
+      value: { html: answerHtml(data.cddo) },
+      actions: { items: [{ href: "1/digital-service-cddo", text: "Change", visuallyHiddenText: "CDDO spend controls answer" }] }
+    }) %}
+  {% endif %}
+
+  {% if isDigitalOrTransformation and data.dataAndPrivacy %}
+    {% set _ = programmeRows.push({
+      key: { text: "Personal or sensitive data" },
+      value: { html: answerHtml(data.dataAndPrivacy) },
+      actions: { items: [{ href: "1/data-and-privacy", text: "Change", visuallyHiddenText: "personal or sensitive data answer" }] }
+    }) %}
+  {% endif %}
+  {% if isDigitalOrTransformation and data.dataAndPrivacySpecial %}
+    {% set _ = programmeRows.push({
+      key: { text: "Special data types" },
+      value: { html: answerHtml(data.dataAndPrivacySpecial) },
+      actions: { items: [{ href: "1/data-and-privacy-special", text: "Change", visuallyHiddenText: "special data types" }] }
+    }) %}
+  {% endif %}
+  {% if isDigitalOrTransformation and data.dataAndPrivacyAi %}
+    {% set _ = programmeRows.push({
+      key: { text: "AI or automated decision-making" },
+      value: { html: answerHtml(data.dataAndPrivacyAi) },
+      actions: { items: [{ href: "1/data-and-privacy-ai", text: "Change", visuallyHiddenText: "AI or automated decision-making answer" }] }
+    }) %}
+  {% endif %}
+  {% if isDigitalOrTransformation and data.dataAndPrivacyCrossGovernment %}
+    {% set _ = programmeRows.push({
+      key: { text: "Cross-government data sharing" },
+      value: { html: answerHtml(data.dataAndPrivacyCrossGovernment) },
+      actions: { items: [{ href: "1/data-and-privacy-cross-government", text: "Change", visuallyHiddenText: "cross-government data sharing answer" }] }
+    }) %}
+  {% endif %}
+
+  {% if isDigitalOrTransformation and data.cyberAndSecurity %}
+    {% set _ = programmeRows.push({
+      key: { text: "Highest security classification" },
+      value: { html: answerHtml(data.cyberAndSecurity) },
+      actions: { items: [{ href: "1/cyber-and-security", text: "Change", visuallyHiddenText: "security classification" }] }
+    }) %}
+  {% endif %}
+  {% if isDigitalOrTransformation and data.cyberAndSecurityCloud %}
+    {% set _ = programmeRows.push({
+      key: { text: "Hosting or cloud model" },
+      value: { html: answerHtml(data.cyberAndSecurityCloud) },
+      actions: { items: [{ href: "1/cyber-and-security-cloud", text: "Change", visuallyHiddenText: "hosting or cloud model" }] }
+    }) %}
+  {% endif %}
+  {% if isDigitalOrTransformation and data.cyberAndSecuritySuppliers %}
+    {% set _ = programmeRows.push({
+      key: { text: "Critical suppliers involved" },
+      value: { html: answerHtml(data.cyberAndSecuritySuppliers) },
+      actions: { items: [{ href: "1/cyber-and-security-suppliers", text: "Change", visuallyHiddenText: "critical suppliers answer" }] }
+    }) %}
+  {% endif %}
+
+  {% if isInfrastructure and data.construction %}
+    {% set _ = programmeRows.push({
+      key: { text: "Construction element" },
+      value: { html: answerHtml(data.construction) },
+      actions: { items: [{ href: "1/construction", text: "Change", visuallyHiddenText: "construction element answer" }] }
+    }) %}
+  {% endif %}
+  {% if isInfrastructure and data.constructionValue %}
+    {% set _ = programmeRows.push({
+      key: { text: "Construction value" },
+      value: { html: answerHtml(data.constructionValue) },
+      actions: { items: [{ href: "1/construction-value", text: "Change", visuallyHiddenText: "construction value" }] }
+    }) %}
+  {% endif %}
+  {% if isInfrastructure and data.property %}
+    {% set _ = programmeRows.push({
+      key: { text: "Property acquisition or disposal" },
+      value: { html: answerHtml(data.property) },
+      actions: { items: [{ href: "1/property", text: "Change", visuallyHiddenText: "property acquisition or disposal answer" }] }
+    }) %}
+  {% endif %}
+
+  {% if data.crossGovernment %}
+    {% set _ = programmeRows.push({
+      key: { text: "Cross-government dependencies" },
+      value: { html: answerHtml(data.crossGovernment) },
+      actions: { items: [{ href: "1/cross-government", text: "Change", visuallyHiddenText: "cross-government dependencies" }] }
+    }) %}
+  {% endif %}
+  {% if data.spend %}
+    {% set _ = programmeRows.push({
+      key: { text: "Novel, contentious or repercussive spend" },
+      value: { html: answerHtml(data.spend) },
+      actions: { items: [{ href: "1/spend", text: "Change", visuallyHiddenText: "spend answer" }] }
+    }) %}
+  {% endif %}
+  {% if data.spendValue %}
+    {% set _ = programmeRows.push({
+      key: { text: "Whole-life spend" },
+      value: { html: answerHtml(data.spendValue) },
+      actions: { items: [{ href: "1/spend-value", text: "Change", visuallyHiddenText: "whole-life spend" }] }
+    }) %}
+  {% endif %}
+  {% if data.spendDigital %}
+    {% set _ = programmeRows.push({
+      key: { text: "Digital or technology spend element" },
+      value: { html: answerHtml(data.spendDigital) },
+      actions: { items: [{ href: "1/spend-digital", text: "Change", visuallyHiddenText: "digital or technology spend element answer" }] }
+    }) %}
+  {% endif %}
+  {% if data.spendDigital == "Yes" and data.spendDigitalOver20M %}
+    {% set _ = programmeRows.push({
+      key: { text: "Digital element over £20 million" },
+      value: { html: answerHtml(data.spendDigitalOver20M) },
+      actions: { items: [{ href: "1/spend-digital", text: "Change", visuallyHiddenText: "whether the digital element is over 20 million" }] }
+    }) %}
+  {% endif %}
+  {% if data.spendDigital == "Yes" and data.spendClassification %}
+    {% set _ = programmeRows.push({
+      key: { text: "Spend control classification" },
+      value: { html: answerHtml(data.spendClassification) },
+      actions: { items: [{ href: "1/spend-classification", text: "Change", visuallyHiddenText: "spend control classification" }] }
+    }) %}
+  {% endif %}
+  {% if data.spendMarketing %}
+    {% set _ = programmeRows.push({
+      key: { text: "Marketing, advertising or communications spend" },
+      value: { html: answerHtml(data.spendMarketing) },
+      actions: { items: [{ href: "1/spend-marketing", text: "Change", visuallyHiddenText: "marketing advertising or communications spend answer" }] }
+    }) %}
+  {% endif %}
+
+  {% if data.legal %}
+    {% set _ = programmeRows.push({
+      key: { text: "Legal and regulatory changes" },
+      value: { html: answerHtml(data.legal) },
+      actions: { items: [{ href: "1/legal", text: "Change", visuallyHiddenText: "legal and regulatory changes" }] }
+    }) %}
+  {% endif %}
+  {% if data.legalAmend %}
+    {% set _ = programmeRows.push({
+      key: { text: "Existing legislation amendments" },
+      value: { html: answerHtml(data.legalAmend) },
+      actions: { items: [{ href: "1/legal-amend", text: "Change", visuallyHiddenText: "existing legislation amendments answer" }] }
+    }) %}
+  {% endif %}
+
+  {% if data.grants %}
+    {% set _ = programmeRows.push({
+      key: { text: "Grants involved" },
+      value: { html: answerHtml(data.grants) },
+      actions: { items: [{ href: "1/grants", text: "Change", visuallyHiddenText: "grants answer" }] }
+    }) %}
+  {% endif %}
+  {% if data.grants == "Yes" and data.grantsDetails1 %}
+    {% set _ = programmeRows.push({
+      key: { text: "Grant type" },
+      value: { html: answerHtml(data.grantsDetails1) },
+      actions: { items: [{ href: "1/grants-details", text: "Change", visuallyHiddenText: "grant type" }] }
+    }) %}
+  {% endif %}
+  {% if data.grants == "Yes" and data.grantsDetails2 %}
+    {% set _ = programmeRows.push({
+      key: { text: "Grant characteristics" },
+      value: { html: answerHtml(data.grantsDetails2) },
+      actions: { items: [{ href: "1/grants-details", text: "Change", visuallyHiddenText: "grant characteristics" }] }
+    }) %}
+  {% endif %}
+
+  {% if data.people %}
+    {% set _ = programmeRows.push({
+      key: { text: "People impacts" },
+      value: { html: answerHtml(data.people) },
+      actions: { items: [{ href: "1/people", text: "Change", visuallyHiddenText: "people impacts" }] }
+    }) %}
+  {% endif %}
+  {% if data.analytical %}
+    {% set _ = programmeRows.push({
+      key: { text: "Analytical assurance needed" },
+      value: { html: answerHtml(data.analytical) },
+      actions: { items: [{ href: "1/analytical", text: "Change", visuallyHiddenText: "analytical assurance answer" }] }
+    }) %}
+  {% endif %}
+  {% if data.analyticalImpactEvaluation %}
+    {% set _ = programmeRows.push({
+      key: { text: "Evaluation plans" },
+      value: { html: answerHtml(data.analyticalImpactEvaluation) },
+      actions: { items: [{ href: "1/analytical-impact-evaluation", text: "Change", visuallyHiddenText: "evaluation plans" }] }
+    }) %}
+  {% endif %}
+  {% if data.lifecycle %}
+    {% set _ = programmeRows.push({
+      key: { text: "Lifecycle stage" },
+      value: { html: answerHtml(data.lifecycle) },
+      actions: { items: [{ href: "1/lifecycle", text: "Change", visuallyHiddenText: "lifecycle stage" }] }
+    }) %}
+  {% endif %}
+
+  {% if data.risk %}
+    {% set _ = riskRows.push({
+      key: { text: "Whole-life cost estimate" },
+      value: { html: answerHtml(data.risk) },
+      actions: { items: [{ href: "2/risk", text: "Change", visuallyHiddenText: "whole-life cost estimate" }] }
+    }) %}
+  {% endif %}
+  {% if data.riskDal %}
+    {% set _ = riskRows.push({
+      key: { text: "Delegated authority limits" },
+      value: { html: answerHtml(data.riskDal) },
+      actions: { items: [{ href: "2/risk-dal", text: "Change", visuallyHiddenText: "delegated authority limits answer" }] }
+    }) %}
+  {% endif %}
+  {% if data.riskTopPriority %}
+    {% set _ = riskRows.push({
+      key: { text: "Top delivery priority" },
+      value: { html: answerHtml(data.riskTopPriority) },
+      actions: { items: [{ href: "2/risk-top-priority", text: "Change", visuallyHiddenText: "top delivery priority answer" }] }
+    }) %}
+  {% endif %}
+  {% if data.riskNistaHmt %}
+    {% set _ = riskRows.push({
+      key: { text: "NISTA or HMT approval needed" },
+      value: { html: answerHtml(data.riskNistaHmt) },
+      actions: { items: [{ href: "2/risk-nista-hmt", text: "Change", visuallyHiddenText: "NISTA or HMT approval needed answer" }] }
+    }) %}
+  {% endif %}
+  {% if data.riskOvfm %}
+    {% set _ = riskRows.push({
+      key: { text: "OVfM factors" },
+      value: { html: answerHtml(data.riskOvfm) },
+      actions: { items: [{ href: "2/risk-ovfm", text: "Change", visuallyHiddenText: "OVfM factors" }] }
+    }) %}
+  {% endif %}
+  {% if data.riskDmpp %}
+    {% set _ = riskRows.push({
+      key: { text: "DMPP or GMPP expectation" },
+      value: { html: answerHtml(data.riskDmpp) },
+      actions: { items: [{ href: "2/risk-dmpp", text: "Change", visuallyHiddenText: "DMPP or GMPP expectation" }] }
+    }) %}
+  {% endif %}
+  {% if data.gds %}
+    {% set _ = riskRows.push({
+      key: { text: "GDS approval needed" },
+      value: { html: answerHtml(data.gds) },
+      actions: { items: [{ href: "2/gds-1", text: "Change", visuallyHiddenText: "GDS approval answer" }] }
+    }) %}
+  {% endif %}
+  {% if data.gds2 %}
+    {% set _ = riskRows.push({
+      key: { text: "GDS service assessment needed" },
+      value: { html: answerHtml(data.gds2) },
+      actions: { items: [{ href: "2/gds-2", text: "Change", visuallyHiddenText: "GDS service assessment answer" }] }
+    }) %}
+  {% endif %}
+  {% if data.hmt %}
+    {% set _ = riskRows.push({
+      key: { text: "HMT approval needed" },
+      value: { html: answerHtml(data.hmt) },
+      actions: { items: [{ href: "2/hmt-1", text: "Change", visuallyHiddenText: "HMT approval answer" }] }
+    }) %}
+  {% endif %}
+  {% if data.hmt2 %}
+    {% set _ = riskRows.push({
+      key: { text: "HMT business case approval needed" },
+      value: { html: answerHtml(data.hmt2) },
+      actions: { items: [{ href: "2/hmt-2", text: "Change", visuallyHiddenText: "HMT business case approval answer" }] }
+    }) %}
+  {% endif %}
+  {% if data.nista %}
+    {% set _ = riskRows.push({
+      key: { text: "NISTA approval needed" },
+      value: { html: answerHtml(data.nista) },
+      actions: { items: [{ href: "2/nista-1", text: "Change", visuallyHiddenText: "NISTA approval answer" }] }
+    }) %}
+  {% endif %}
+  {% if data.nista2 %}
+    {% set _ = riskRows.push({
+      key: { text: "NISTA full business case approval needed" },
+      value: { html: answerHtml(data.nista2) },
+      actions: { items: [{ href: "2/nista-2", text: "Change", visuallyHiddenText: "NISTA full business case approval answer" }] }
+    }) %}
+  {% endif %}
+
+  {% if data.sro %}
+    {% set _ = sroRows.push({
+      key: { text: "SRO approval needed" },
+      value: { html: answerHtml(data.sro) },
+      actions: { items: [{ href: "3/do-you-need-sro-approval", text: "Change", visuallyHiddenText: "SRO approval answer" }] }
+    }) %}
+  {% endif %}
+  {% if data.sro == "Yes" and data.sroSelectApprover %}
+    {% set _ = sroRows.push({
+      key: { text: "Selected SRO approver" },
+      value: { html: answerHtml(data.sroSelectApprover) },
+      actions: { items: [{ href: "3/select-sro-approver", text: "Change", visuallyHiddenText: "selected SRO approver" }] }
+    }) %}
+  {% endif %}
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
-      <h1 class="govuk-heading-xl">
-        Check your answers before sending your application
-      </h1>
+      <span class="govuk-caption-l">{{ data.initiativeName }}</span>
+      <h1 class="govuk-heading-xl">Check your answers before continuing</h1>
 
-      {{ govukSummaryList({
-        rows: [
-          {
-            key: {
-              text: "Question 1"
-            },
-            value: {
-              text: "Answer 1"
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "Question 1"
-                }
-              ]
-            }
-          }
-          ,
-          {
-            key: {
-              text: "Question 2"
-            },
-            value: {
-              text: "Answer 2"
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "Question 2"
-                }
-              ]
-            }
-          }
-          ,
-          {
-            key: {
-              text: "Question 3"
-            },
-            value: {
-              text: "Answer 3"
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "Question 3"
-                }
-              ]
-            }
-          }
-        ]
-      }) }}
+      <h2 class="govuk-heading-m">1. Programme or project details</h2>
+      {{ govukSummaryList({ rows: programmeRows }) }}
 
-      <h2 class="govuk-heading-m">
-        Now send your application
-      </h2>
+      <h2 class="govuk-heading-m govuk-!-margin-top-7">2. Integrated risk questions</h2>
+      {{ govukSummaryList({ rows: riskRows }) }}
 
-      <p>
-        By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.
-      </p>
+      <h2 class="govuk-heading-m govuk-!-margin-top-7">3. SRO assurance</h2>
+      {{ govukSummaryList({ rows: sroRows }) }}
 
-      <form action="/confirmation" method="post" novalidate>
+      <h2 class="govuk-heading-m govuk-!-margin-top-7">Continue to the next stage</h2>
+
+      <p>Review these answers carefully before you continue.</p>
+
+      <form action="confirmation" method="post" novalidate>
 
         {{ govukButton({
-          text: "Accept and send"
+          text: "Confirm and continue"
         }) }}
 
       </form>
